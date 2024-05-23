@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefighter Run Report</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tab-wrap">
+            <span class="dot"></span>
+            <div class="tab">
+                <div class="header">
+                    <h1>Firefighter Run Report</h1>
+                    <button id="close-btn"><i class="fa fa-times"></i></button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date">
+                </div>
+                
+                <div class="form-group">
+                    <label for="incident-number">Incident Number:</label>
+                    <input type="text" id="incident-number" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="incident-type">Incident Type:</label>
+                    <select id="incident-type">
+                        <option value="fire">Fire</option>
+                        <option value="medical">Medical</option>
+                        <option value="rescue">Rescue</option>
+                        <!-- Add more incident types as needed -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location">
+                </div>
+                
+                <div class="form-group">
+                    <label for="alarm">Alarm:</label>
+                    <input type="time" id="alarm">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dispatch">Dispatch:</label>
+                    <input type="time" id="dispatch">
+                </div>
+                
+                <div id="vehicles">
+                    <h2>Vehicles</h2>
+                    <button id="add-vehicle">Add Vehicle</button>
+                </div>
+        
+                <div id="apparatus">
+                    <h2>Fire Apparatus Used</h2>
+                    <button id="add-apparatus">Add Apparatus</button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agencies">Agencies Involved:</label>
+                    <div id="agencies">
+                        <input type="checkbox" id="bcso" value="BCSO"><label for="bcso">BCSO</label>
+                        <input type="checkbox" id="spd" value="SPD"><label for="spd">SPD</label>
+                        <input type="checkbox" id="bcfd" value="BCFD"><label for="bcfd">BCFD</label>
+                        <input type="checkbox" id="dnr" value="DNR"><label for="dnr">DNR</label>
+                        <input type="checkbox" id="asp" value="ASP"><label for="asp">ASP</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="narrative">Narrative:</label>
+                    <textarea id="narrative" rows="5"></textarea>
+                </div>
+                
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data.action === 'openFirefighterReport') {
+                document.querySelector('.tab-container').style.display = 'flex';
+                console.log("Firefighter Report NUI opened");
+            }
+            if (event.data.action === 'closeFirefighterReport') {
+                document.querySelector('.tab-container').style.display = 'none';
+                console.log("Firefighter Report NUI closed");
+            }
+        });
+    </script>
+</body>
+</html>

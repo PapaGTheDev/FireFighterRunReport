@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tab-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.tab-wrap {
+    background: black;
+    width: 90%;
+    max-width: 1080px;
+    height: 70%;
+    max-height: 70%;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-wrap .dot {
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    border-radius: 33%;
+    bottom: 8px;
+    border: 1px solid dodgerblue;
+    transition: all 0.5s ease;
+    align-self: center;
+}
+
+.tab-wrap .dot:hover {
+    background: whitesmoke;
+}
+
+.tab {
+    background: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+#close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#submit, #add-vehicle, #add-apparatus {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#submit:hover, #add-vehicle:hover, #add-apparatus:hover {
+    background-color: #0056b3;
+}
+
+.vehicle, .apparatus {
+    margin-top: 20px;
+}
+
+.vehicle h3, .apparatus h3 {
+    margin-top: 0;
+}
+
+#agencies input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#agencies label {
+    margin-right: 20px;
+}
